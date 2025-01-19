@@ -1,5 +1,7 @@
 package com.javadev.controller;
 
+import com.javadev.dto.RegisteredCourseResponse;
+import com.javadev.dto.RegisteredUserResponse;
 import com.javadev.dto.UserDto;
 import com.javadev.model.User;
 import com.javadev.model.enums.Role;
@@ -9,6 +11,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
+import java.util.Map;
 
 @RestController
 @RequestMapping("/users")
@@ -61,6 +64,11 @@ public class UserController {
   @GetMapping("/student")
   public ResponseEntity<List<UserDto>> getStudents() {
     return ResponseEntity.ok(this.userService.getStudents(Role.STUDENT));
+  }
+
+  @GetMapping("/courses/{id}")
+  public ResponseEntity<Map<Integer, List<RegisteredUserResponse>>> getRegisteredUser(@PathVariable("id") int studentId) {
+    return ResponseEntity.ok(this.userService.getRegisteredUserByCourseId(studentId));
   }
 
 }

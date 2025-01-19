@@ -1,8 +1,8 @@
 package com.javadev.repository;
 
-import com.javadev.model.Lecture;
+import com.javadev.model.Course;
 import org.springframework.data.jpa.repository.JpaRepository;
 
-public interface LectureRepository extends JpaRepository<Lecture, Integer> {
+public interface CourseRepository extends JpaRepository<Course, Integer> {
   boolean existsByTeacherId(int teacherId);
 }

@@ -7,7 +7,7 @@ import lombok.NoArgsConstructor;
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-public class RegisterLecture {
+public class RegisterCourse {
   private int studentId;
 
 }

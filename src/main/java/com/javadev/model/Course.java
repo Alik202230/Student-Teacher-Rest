@@ -3,6 +3,8 @@ package com.javadev.model;
 import jakarta.persistence.*;
 import lombok.*;
 
+import java.util.List;
+
 @Setter
 @Getter
 @Entity
@@ -11,8 +13,8 @@ import lombok.*;
 @EqualsAndHashCode
 @NoArgsConstructor
 @AllArgsConstructor
-@Table(name = "lecture")
-public class Lecture {
+@Table(name = "course")
+public class Course {
 
   @Id
   @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -25,4 +27,7 @@ public class Lecture {
 
   @ManyToOne
   private User student;
+
+  @ManyToMany(mappedBy = "courses", fetch = FetchType.LAZY)
+  private List<User> registeredUsers;
 }

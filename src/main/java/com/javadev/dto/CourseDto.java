@@ -5,16 +5,15 @@ import lombok.NoArgsConstructor;
 
 @Data
 @NoArgsConstructor
-public class LectureResponse {
+public class CourseDto {
 
   private String title;
   private String description;
   private int studentId;
 
-  public LectureResponse(String title, String description, int studentId) {
+  public CourseDto(String  title, String description, int studentId) {
     this.title = title;
     this.description = description;
     this.studentId = studentId;
   }
-
 }
