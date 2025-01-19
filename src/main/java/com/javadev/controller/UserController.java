@@ -1,6 +1,5 @@
 package com.javadev.controller;
 
-import com.javadev.dto.RegisteredCourseResponse;
 import com.javadev.dto.RegisteredUserResponse;
 import com.javadev.dto.UserDto;
 import com.javadev.model.User;
